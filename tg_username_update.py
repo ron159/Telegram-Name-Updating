@@ -6,13 +6,13 @@
 #  2. 增加emoji clock，让时间显示更加有趣味
 # fork from cody
 
-import time
+from datetime import timedelta
+import datetime
 import os
 import sys
 import logging
 import asyncio
 import random
-from time import strftime
 from telethon import TelegramClient
 from telethon.tl.functions.account import UpdateProfileRequest
 from emoji import emojize
@@ -46,9 +46,9 @@ async def change_name_auto():
 
     while True:
         try:
-            time_cur = strftime("%H:%M:%S:%p:%a", time.localtime())
+            t=datetime.datetime.utcnow()+timedelta(hours=8)
+            time_cur = t.strftime("%H:%M:%S:%p:%a")
             hour, minu, seco, p, abbwn = time_cur.split(':')
-            hour = str(int(hour)+8)
             if seco=='00' or seco=='20' or seco=='40':
                 shift = 0
                 mult = 1
