@@ -58,7 +58,7 @@ async def change_name_auto():
             time_cur = t.strftime("%H:%M:%S:%p:%a")
             hour, minu, seco, p, abbwn = time_cur.split(':')
             day, delday, per = dayscal.today_of_year()
-            if int(seco) % 10 == 0:
+            if int(seco) % 20 == 0:
                 shift = 0
                 if int(minu) > 30:
                     shift = 1
