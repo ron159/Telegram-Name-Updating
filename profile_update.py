@@ -102,9 +102,9 @@ async def change_name_auto():
 
                 await client1(UpdateProfileRequest(last_name=last_name, about=about))
                 logger.info('Updated -> %s %s' % (last_name, about))
-                if int(hour) % 5 == 0:
-                    name = random.randint(1, 10)
-                    await client1(UploadProfilePhotoRequest(await client1.upload_file('/home/ron/test_tg/avator/%s.jpg' % name)))
+            if (hour==00 and minu==00) or (hour==12 and minu==00) == 0:
+                name = random.randint(1, 10)
+                await client1(UploadProfilePhotoRequest(await client1.upload_file('/home/ron/test_tg/avator/%s.jpg' % name)))
 
         except KeyboardInterrupt:
             print('\nwill reset last name\n')
