@@ -76,7 +76,7 @@ async def change_name_auto():
                     last_name = '%s:%s %s %s %s' % (hour, minu, p, abbwn, hsym)
                     about = '为什么偷窥我？'
                 elif for_fun < 0.30:
-                    last_name = '今年已过%s%%' % format(per*100, '0.1f')
+                    last_name = '%s已过%s%%' % (day.year,format(per*100, '0.1f'))
                     about = 'Always blue.'
                 elif for_fun < 0.40:
                     last_name = '%s年%s月%s日' % (day.year, day.month, day.day)
